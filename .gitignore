@@ -1,0 +1,32 @@
+# Exploration + tooling — not for public preview
+_design/
+_gen/
+_screenshots/
+
+# Generated/unused assets
+assets/feed-frames/
+assets/hero/
+assets/identity/
+assets/v4/
+assets/v7/
+assets/worlds/hero-vista-roll2*
+assets/worlds/hero-vista-roll3-feathered.png
+assets/worlds/hero-vista-roll3-raw*
+assets/worlds/hero-vista-v6-game-elements.png
+assets/worlds/hero-vista-v7-game-elements-clipped.png
+assets/worlds/noir-cinema.png
+assets/worlds/coral-cathedral.png
+assets/worlds/library-vault.png
+
+# OS / editor / scratch
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Dependencies / build
+node_modules/
+dist/
+.cache/

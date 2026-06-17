@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="assets/brand/alteru.svg" />
+<title>AlterU — Another you, one tap away.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="_shared.css" />
+<style>
+  /* ─── V1 Hero — Phone Mockup + Feed Loop ──────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 132px 24px 80px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-copy { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brand-pink);
+    background: rgba(245, 177, 199, 0.12);
+    border: 1px solid rgba(245, 177, 199, 0.32);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--brand-pink);
+    border-radius: 999px;
+    box-shadow: 0 0 12px var(--brand-pink);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin: 0 0 24px;
+    color: var(--text-1);
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--brand-pink);
+    position: relative;
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--text-2);
+    margin: 0 0 40px;
+    max-width: 30ch;
+  }
+  .hero-cta-row { margin-bottom: 28px; }
+  .hero-microcopy {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .hero-microcopy span { color: var(--brand-pink); }
+
+  /* — Hero art: single expanded worlds vista + scroll parallax + edge-bleed — */
+  .hero-art {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 1 / 1;        /* hero-vista is txt2img 1:1 */
+    margin: 0 auto;
+    overflow: visible;
+    z-index: 1;
+    will-change: transform;
+  }
+  .hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+@media (max-width: 920px) {
+    .hero { padding: 120px 20px 60px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-art { max-width: 420px; }
+    .hero-title { font-size: clamp(40px, 11vw, 64px); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a class="nav-brand" href="index.html"><img src="assets/brand/alteru.svg" alt="AlterU" />
+    <span>AlterU</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-back" href="index.html">← Compare</a>
+    <a class="nav-cta" href="https://apps.apple.com/app/id6769646546">Get app</a>
+  </div>
+</nav>
+
+<!-- HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+<div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="dot"></span>Now on iOS · Telegram</span>
+      <h1 class="hero-title">Another you,<br/>one tap <em>away.</em></h1>
+      <p class="hero-sub">
+        Identity-driven mini-games in a single endless feed. Open. Swipe. Play. Your AI self becomes the protagonist.
+      </p>
+      <div class="cta-row hero-cta-row">
+        <a class="cta cta-primary" href="https://apps.apple.com/app/id6769646546" aria-label="Download AlterU on the App Store">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 12.04c-.03-3.18 2.6-4.7 2.72-4.78-1.49-2.17-3.8-2.47-4.62-2.5-1.96-.2-3.83 1.16-4.83 1.16-1.01 0-2.55-1.13-4.2-1.1-2.16.03-4.16 1.26-5.27 3.2-2.25 3.91-.57 9.69 1.62 12.85 1.07 1.55 2.35 3.29 4.04 3.22 1.62-.07 2.23-1.05 4.2-1.05 1.95 0 2.5 1.05 4.22 1.01 1.74-.03 2.84-1.58 3.91-3.13 1.23-1.8 1.74-3.54 1.77-3.63-.04-.02-3.4-1.3-3.43-5.15zM13.83 3.6c.88-1.07 1.48-2.55 1.32-4.05-1.27.05-2.84.85-3.76 1.91-.82.94-1.55 2.46-1.36 3.91 1.43.11 2.9-.71 3.8-1.77z"/>
+          </svg>
+          <span class="cta-label-stack">
+            <span class="small">Download on the</span>
+            <span class="big">App Store</span>
+          </span>
+        </a>
+        <a class="cta cta-secondary" href="https://t.me/alteru_bot" aria-label="Open AlterU in Telegram">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="cta-label-stack">
+            <span class="small">Play instantly in</span>
+            <span class="big">Telegram</span>
+          </span>
+        </a>
+      </div>
+      <p class="hero-microcopy">Free · <span>No sign-up to scroll</span></p>
+    </div>
+
+    <div class="hero-art" data-parallax="-0.10">
+      <img src="assets/worlds/hero-vista.png" alt="A vast Pixar-style 3D dream chamber with floating crystal islands and a tiny anonymous silhouette character standing at the foot of a pink and violet heaven beam — the AlterU identity layer of walking into a vast game world." />
+    </div>
+
+  </div>
+</section>
+
+<!-- IDENTITY ──────────────────────────────────────────────── -->
+<section class="section identity">
+  <div class="container identity-grid">
+    <div>
+      <span class="eyebrow">Why "AlterU"</span>
+      <h2 class="h2">Your AI self<br/>walks into the game.</h2>
+      <p class="lede">
+        Most game feeds are anonymous. AlterU isn't. Your avatar, the work
+        you've made, the people you follow — they all show up inside the
+        games. Bosses, NPCs, characters on a kiss wall, neighbours in
+        a block-hop. Every scroll is personal in a way TikTok can only fake.
+      </p>
+    </div>
+    <div class="identity-art">
+      <div class="identity-art-emblem" role="img" aria-label="A fanned-out hand of five stylized worlds — mushroom forest, sky-clouds, crystal cave, candy land, cyberpunk neon — each with a character looking up at a heavenly beam of light, illustrating the AlterU identity layer of walking into different game worlds.">
+        <div class="mini-tile"><img src="assets/worlds/mushroom-forest.png" alt=""/></div>
+        <div class="mini-tile"><img src="assets/worlds/sky-clouds.png" alt=""/></div>
+        <div class="mini-tile"><img src="assets/worlds/crystal-cave.png" alt=""/></div>
+        <div class="mini-tile"><img src="assets/worlds/candy-land.png" alt=""/></div>
+        <div class="mini-tile"><img src="assets/worlds/cyberpunk-neon.png" alt=""/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAKERS ─────────────────────────────────────────────────── -->
+<section class="section how">
+  <div class="container">
+    <div class="how-head">
+      <span class="eyebrow">Who makes them</span>
+      <h2 class="h2">Made by the people<br/>in the feed.</h2>
+      <p class="lede">Not an algorithm. Not a studio. Three ways to ship straight into the scroll.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>One sentence</h3>
+        <p>Type the game you want. The AI fills in the rest — art, code, sound, voice.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Remix</h3>
+        <p>Pick a game from the feed. Twist the rules, swap the world, ship a version that's yours.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>Soon</h3>
+        <p>Your photos, voice, and stories will quietly seed other people's games — without you lifting a finger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAME WALL ─────────────────────────────────────────────── -->
+<section class="section wall">
+  <div class="container">
+    <div class="wall-head">
+      <div>
+        <span class="eyebrow">A taste</span>
+        <h2 class="h2">Eight from the feed.<br/>There are more.</h2>
+      </div>
+      <p>Action, daily collectibles, supernatural FMV, vision parody, sensory toys. The feed is mixed by design — the next thing is never the previous thing.</p>
+    </div>
+    <div class="wall-grid">
+      <div class="tile"><img src="assets/posters/sky-leap.png" alt="Sky Leap"/><span class="tile-label">Sky Leap</span></div>
+      <div class="tile"><img src="assets/posters/pulp-hour.png" alt="Pulp Hour"/><span class="tile-label">Pulp Hour</span></div>
+      <div class="tile"><img src="assets/posters/block-hop.png" alt="Block Hop"/><span class="tile-label">Block Hop</span></div>
+      <div class="tile"><img src="assets/posters/hour-capsule.png" alt="Hour Capsule"/><span class="tile-label">Hour Capsule</span></div>
+      <div class="tile"><img src="assets/posters/kiss-wall.png" alt="Kiss Wall"/><span class="tile-label">Kiss Wall</span></div>
+      <div class="tile"><img src="assets/posters/shelf-it.png" alt="Shelf It"/><span class="tile-label">Shelf It</span></div>
+      <div class="tile"><img src="assets/posters/the-locksmith.png" alt="The Locksmith"/><span class="tile-label">Locksmith</span></div>
+      <div class="tile"><img src="assets/posters/pebble-pocket.png" alt="Pebble Pocket"/><span class="tile-label">Pebble Pocket</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA ─────────────────────────────────────────────── -->
+<section class="section final">
+  <div class="container">
+    <span class="eyebrow">Pick your door</span>
+    <h2 class="h2">Another you.<br/>Every scroll.</h2>
+    <p class="lede">Free to install, free to scroll. No accounts asked before you've seen what's in there.</p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="https://apps.apple.com/app/id6769646546">
+        <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.05 12.04c-.03-3.18 2.6-4.7 2.72-4.78-1.49-2.17-3.8-2.47-4.62-2.5-1.96-.2-3.83 1.16-4.83 1.16-1.01 0-2.55-1.13-4.2-1.1-2.16.03-4.16 1.26-5.27 3.2-2.25 3.91-.57 9.69 1.62 12.85 1.07 1.55 2.35 3.29 4.04 3.22 1.62-.07 2.23-1.05 4.2-1.05 1.95 0 2.5 1.05 4.22 1.01 1.74-.03 2.84-1.58 3.91-3.13 1.23-1.8 1.74-3.54 1.77-3.63-.04-.02-3.4-1.3-3.43-5.15zM13.83 3.6c.88-1.07 1.48-2.55 1.32-4.05-1.27.05-2.84.85-3.76 1.91-.82.94-1.55 2.46-1.36 3.91 1.43.11 2.9-.71 3.8-1.77z"/>
+        </svg>
+        <span class="cta-label-stack"><span class="small">Download on the</span><span class="big">App Store</span></span>
+      </a>
+      <a class="cta cta-secondary" href="https://t.me/alteru_bot">
+        <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="cta-label-stack"><span class="small">Play instantly in</span><span class="big">Telegram</span></span>
+      </a>
+    </div>
+    <p class="small-note">Android · Coming soon</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-row">
+    <div class="foot-brand">
+      
+      <span>AlterU</span>
+    </div>
+    <div class="foot-meta">© 2026 AlterU. Another you. Every scroll.</div>
+  </div>
+</footer>
+
+<script>
+  // ─── Scroll parallax for data-parallax="<speed>" elements ─────────
+  // speed is a multiplier applied to scrollY. Negative speed makes the
+  // element drift up faster than scroll (foreground feel); larger magnitude
+  // = more pronounced. Tiles get varying speeds to create a sense of depth
+  // as the user scrolls the worlds gallery.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const els = document.querySelectorAll('[data-parallax]');
+    if (!els.length) return;
+    let pageY = window.scrollY, rafId = null;
+    function tick() {
+      rafId = null;
+      els.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax) || 0;
+        el.style.transform = `translate3d(0, ${(pageY * speed).toFixed(2)}px, 0)`;
+      });
+    }
+    function onScroll() {
+      pageY = window.scrollY;
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    tick();
+  })();
+</script>
+</body>
+</html>
