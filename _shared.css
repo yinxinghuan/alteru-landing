@@ -75,6 +75,21 @@ body {
   transition: color 200ms ease, background 200ms ease;
 }
 .nav-back:hover { color: var(--text-1); background: var(--surface-2); }
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: color 200ms ease, background 200ms ease;
+}
+.nav-link:hover { color: var(--text-1); background: var(--surface-2); }
 .nav-cta {
   display: inline-flex;
   align-items: center;
