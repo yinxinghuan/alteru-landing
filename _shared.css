@@ -365,6 +365,8 @@ body {
   gap: 16px;
 }
 .tile {
+  display: block;
+  text-decoration: none;
   position: relative;
   aspect-ratio: 1 / 1;
   border-radius: 18px;
