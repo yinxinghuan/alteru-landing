@@ -110,6 +110,87 @@
     .hero-art { max-width: 420px; }
     .hero-title { font-size: clamp(40px, 11vw, 64px); }
   }
+
+  /* ─── Social section — interaction + notifications ──────────── */
+  .social {
+    background:
+      radial-gradient(120% 90% at 78% 30%, rgba(245, 177, 199, 0.10) 0%, transparent 55%),
+      var(--surface-1);
+    border-top: 1px solid var(--border);
+  }
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .social .lede { margin-bottom: 28px; }
+  .social-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .social-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-2);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 7px 13px;
+    border-radius: 999px;
+  }
+  /* — phone-like notification stack — */
+  .notif-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .notif {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 13px 15px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  }
+  .notif:nth-child(2) { transform: translateX(14px); }
+  .notif:nth-child(3) { transform: translateX(28px); }
+  .notif-avatar {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text-on-brand);
+  }
+  .notif-body { min-width: 0; }
+  .notif-text {
+    font-size: 14px;
+    line-height: 1.35;
+    color: var(--text-1);
+  }
+  .notif-text b { font-weight: 700; }
+  .notif-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-3);
+    margin-top: 2px;
+  }
+  @media (max-width: 760px) {
+    .social-grid { grid-template-columns: 1fr; gap: 36px; }
+    .notif:nth-child(2), .notif:nth-child(3) { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -211,6 +292,52 @@
         <span class="step-num">3</span>
         <h3>Soon</h3>
         <p>Your photos, voice, and stories will quietly seed other people's games — without you lifting a finger.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL ────────────────────────────────────────────────── -->
+<section class="section social">
+  <div class="container social-grid">
+    <div>
+      <span class="eyebrow">It's not single-player</span>
+      <h2 class="h2">Touch someone's<br/>game. They feel it.</h2>
+      <p class="lede">
+        Kiss a stranger's wall, beat their high score, remix their game,
+        keep the stone they found. The moment you do, they get a real
+        notification — and it pulls them back to play off you. Small acts,
+        real people, on the other end.
+      </p>
+      <div class="social-tags">
+        <span class="social-tag">Beat a score</span>
+        <span class="social-tag">Remix a game</span>
+        <span class="social-tag">Kiss a wall</span>
+        <span class="social-tag">Keep a find</span>
+        <span class="social-tag">Get pinged back</span>
+      </div>
+    </div>
+    <div class="notif-stack" role="img" aria-label="Example notifications: Mia kissed your wall; you just got passed on River Row; Leo remixed your game.">
+      <div class="notif">
+        <span class="notif-avatar" style="background:#F5B1C7;">M</span>
+        <div class="notif-body">
+          <div class="notif-text"><b>Mia</b> kissed your wall 💋</div>
+          <div class="notif-time">now</div>
+        </div>
+      </div>
+      <div class="notif">
+        <span class="notif-avatar" style="background:#7EC8E3;">R</span>
+        <div class="notif-body">
+          <div class="notif-text"><b>Rae</b> just passed your score on River Row</div>
+          <div class="notif-time">2m ago</div>
+        </div>
+      </div>
+      <div class="notif">
+        <span class="notif-avatar" style="background:#C7A8F0;">L</span>
+        <div class="notif-body">
+          <div class="notif-text"><b>Leo</b> remixed your game</div>
+          <div class="notif-time">5m ago</div>
+        </div>
       </div>
     </div>
   </div>
