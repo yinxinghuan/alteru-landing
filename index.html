@@ -192,7 +192,15 @@
     font-size: 15px;
     color: var(--text-on-brand);
   }
-  .notif-body { min-width: 0; }
+  .notif-body { min-width: 0; flex: 1; }
+  .notif-thumb {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+  }
   .notif-text {
     font-size: 14px;
     line-height: 1.35;
@@ -345,6 +353,7 @@
           <div class="notif-text"><b>Mia</b> kissed your wall 💋</div>
           <div class="notif-time">now</div>
         </div>
+        <img class="notif-thumb" src="assets/posters/kiss-wall.png" alt="" aria-hidden="true" />
       </div>
       <div class="notif">
         <span class="notif-avatar" style="background:#7EC8E3;">R</span>
@@ -352,6 +361,7 @@
           <div class="notif-text"><b>Rae</b> just passed your score on River Row</div>
           <div class="notif-time">2m ago</div>
         </div>
+        <img class="notif-thumb" src="assets/posters/river-row.png" alt="" aria-hidden="true" />
       </div>
       <div class="notif">
         <span class="notif-avatar" style="background:#C7A8F0;">L</span>
@@ -359,6 +369,7 @@
           <div class="notif-text"><b>Leo</b> remixed your game</div>
           <div class="notif-time">5m ago</div>
         </div>
+        <img class="notif-thumb" src="assets/posters/sky-leap.png" alt="" aria-hidden="true" />
       </div>
       </div>
     </div>
