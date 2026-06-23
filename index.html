@@ -141,8 +141,27 @@
     padding: 7px 13px;
     border-radius: 999px;
   }
+  /* — visual: notification stack floating over a soft connection backdrop — */
+  .social-visual { position: relative; }
+  .social-bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 132%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.9;
+    mix-blend-mode: screen;          /* eats the black, keeps the glow → blends into page */
+    -webkit-mask-image: radial-gradient(closest-side, #000 50%, transparent 92%);
+    mask-image: radial-gradient(closest-side, #000 50%, transparent 92%);
+    will-change: transform;
+  }
   /* — phone-like notification stack — */
   .notif-stack {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -317,7 +336,9 @@
         <span class="social-tag">Get pinged back</span>
       </div>
     </div>
-    <div class="notif-stack" role="img" aria-label="Example notifications: Mia kissed your wall; you just got passed on River Row; Leo remixed your game.">
+    <div class="social-visual">
+      <img class="social-bg-img" src="assets/social/social-bg.png" alt="" aria-hidden="true" />
+      <div class="notif-stack" role="img" aria-label="Example notifications: Mia kissed your wall; you just got passed on River Row; Leo remixed your game.">
       <div class="notif">
         <span class="notif-avatar" style="background:#F5B1C7;">M</span>
         <div class="notif-body">
@@ -338,6 +359,7 @@
           <div class="notif-text"><b>Leo</b> remixed your game</div>
           <div class="notif-time">5m ago</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
