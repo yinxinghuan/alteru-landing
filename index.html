@@ -86,6 +86,28 @@
   }
   .hero-microcopy span { color: var(--brand-pink); }
 
+  /* — Web fallback: a quiet ghost link under the primary CTAs (lighter than App/Telegram on purpose) — */
+  .web-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--text-3);
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+  .web-fallback svg { width: 15px; height: 15px; opacity: 0.7; flex-shrink: 0; }
+  .web-fallback b { color: var(--brand-pink); font-weight: 700; }
+  .web-fallback .arrow { transition: transform 180ms ease; }
+  .web-fallback:hover { color: var(--text-2); }
+  .web-fallback:hover b { color: var(--brand-pink-strong); }
+  .web-fallback:hover .arrow { transform: translateX(3px); }
+  .final .web-fallback { margin-top: 18px; }
+
   /* — Hero art: single expanded worlds vista + scroll parallax + edge-bleed — */
   .hero-art {
     position: relative;
@@ -262,6 +284,13 @@
         </a>
       </div>
       <p class="hero-microcopy">Free · <span>No sign-up to scroll</span></p>
+      <a class="web-fallback" href="https://aigram.aiwaves.tech/wos/alteru" aria-label="Open AlterU in your web browser — no install needed">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" stroke-linecap="round"/>
+        </svg>
+        <span>No download? <b>Open it in your browser</b></span>
+        <span class="arrow">&rarr;</span>
+      </a>
     </div>
 
     <div class="hero-art" data-parallax="-0.10">
@@ -419,6 +448,13 @@
         <span class="cta-label-stack"><span class="small">Play instantly in</span><span class="big">Telegram</span></span>
       </a>
     </div>
+    <a class="web-fallback" href="https://aigram.aiwaves.tech/wos/alteru" aria-label="Open AlterU in your web browser — no install needed">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18" stroke-linecap="round"/>
+      </svg>
+      <span>Don't want to install? <b>Open AlterU in your browser</b></span>
+      <span class="arrow">&rarr;</span>
+    </a>
     <p class="small-note">Android · Coming soon</p>
   </div>
 </section>
