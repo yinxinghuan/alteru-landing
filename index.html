@@ -240,6 +240,48 @@
     .social-grid { grid-template-columns: 1fr; gap: 36px; }
     .notif:nth-child(2), .notif:nth-child(3) { transform: none; }
   }
+
+  /* — Our thesis: a quiet bridge from the consumer landing page — */
+  .investor-thesis {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+  }
+  .investor-thesis::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--brand-pink) 0 36%, rgba(245,177,199,.12) 36% 100%);
+  }
+  .investor-thesis__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+    gap: clamp(36px, 7vw, 86px);
+    align-items: end;
+  }
+  .investor-thesis .h2 { margin-bottom: 0; }
+  .investor-thesis__copy .lede { margin: 0 0 26px; }
+  .investor-link {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brand-pink);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-underline-offset: 5px;
+  }
+  .investor-link:focus-visible { outline: 3px solid var(--brand-pink-strong); outline-offset: 3px; }
+  .foot-investor-link { color: var(--brand-pink); font-size: 12px; font-weight: 700; text-underline-offset: 4px; }
+  @media (max-width: 760px) {
+    .investor-thesis__grid { grid-template-columns: 1fr; align-items: start; }
+  }
 </style>
 </head>
 <body>
@@ -437,6 +479,20 @@
   </div>
 </section>
 
+<!-- OUR THESIS ────────────────────────────────────────────── -->
+<section class="section investor-thesis">
+  <div class="container investor-thesis__grid">
+    <div>
+      <span class="eyebrow">Our thesis</span>
+      <h2 class="h2">Social should be something<br/>we do together.</h2>
+    </div>
+    <div class="investor-thesis__copy">
+      <p class="lede">AlterU turns self-expression into shared, playable worlds. See why we believe play can become the next social primitive.</p>
+      <a class="investor-link" href="investors/">Read the investor overview <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA ─────────────────────────────────────────────── -->
 <section class="section final">
   <div class="container">
@@ -480,6 +536,7 @@
       
       <span>AlterU</span>
     </div>
+    <a class="foot-investor-link" href="investors/">Investor overview →</a>
     <div class="foot-meta">© 2026 AlterU. Another you. Every scroll.</div>
   </div>
 </footer>
