@@ -165,6 +165,21 @@ h1 em { display: block; color: var(--pink); font-style: normal; }
 .technology-layer__flow i { color: var(--pink); font-style: normal; }
 .technology-layer--future .technology-layer__index span, .technology-layer--future .technology-layer__flow i { color: var(--lavender); }
 
+.technology-demo { grid-column: 1 / -1; min-width: 0; margin: 8px 0 0; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; gap: clamp(28px, 4vw, 60px); }
+.technology-demo video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; color: var(--white); background: var(--black); border: 1px solid rgba(255,255,255,.22); border-radius: 18px; }
+.technology-demo figcaption { min-width: 0; max-width: 430px; }
+.technology-demo__label { color: var(--pink); font: 700 10px/1.4 var(--display); letter-spacing: .12em; text-transform: uppercase; }
+.technology-demo h3 { margin: 20px 0; font: 600 clamp(26px, 3vw, 38px)/1.12 var(--display); letter-spacing: -.035em; text-wrap: balance; }
+.technology-demo p { font-size: 16px; }
+.technology-demo .technology-demo__note { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.18); font-size: 14px; line-height: 1.6; }
+.technology-demo__meta { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.technology-demo__meta > span { color: rgba(255,255,255,.66); font-size: 12px; line-height: 1.5; }
+.technology-demo__meta a { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; color: var(--pink); font-size: 13px; font-weight: 600; text-underline-offset: 5px; }
+.technology-demo__meta a:hover { color: var(--white); }
+.technology-demo__meta a:active { opacity: .7; }
+.technology-demo__meta a:focus-visible, .technology-demo video:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
+.technology-layer--future .technology-demo__label, .technology-layer--future .technology-demo__meta a { color: var(--lavender); }
+
 .compounding { background: #f1edf0; }
 .moat-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 20px; }
 .moat-grid article { min-height: 210px; padding: 26px 24px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--line); }
@@ -248,6 +263,9 @@ h1 em { display: block; color: var(--pink); font-style: normal; }
   .product-proof { grid-template-columns: 1fr; }
   .game-strip img { min-height: 280px; }
   .technology-layer { grid-template-columns: 1fr; gap: 22px; }
+  .technology-demo { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .technology-demo video { max-width: 420px; justify-self: center; }
+  .technology-demo figcaption { max-width: none; }
   .moat-grid { grid-template-columns: 1fr; }
   .moat-grid article { min-height: 150px; border-right: 0; border-bottom: 1px solid var(--line); }
   .moat-grid article:last-child { border-bottom: 0; }
